@@ -2,15 +2,35 @@ import styled from "styled-components";
 
 export const ToggleCircle = styled.div``;
 
-export const ClickBox = styled.div``;
+export const ClickBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-export const ToggleBox = styled.div``;
+export const ToggleBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export const ThemeLabel = styled.p``;
 
-export const ThemesBox = styled.div``;
+export const ThemesBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-export const SwitcherBox = styled.div``;
+export const SwitcherBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const ThemeSwitcher = ({ className }) => {
   return (

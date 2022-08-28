@@ -2,25 +2,49 @@ import styled from "styled-components";
 import ThemeSwitcher from "./ThemeSwitcher";
 import CalcBtn, { DeleteBtn, ResetBtn, EqualBtn } from "./CalcBtn";
 
-export const BtnsBox = styled.div``;
+export const BtnsBox = styled.div`
+  display: grid;
+  grid-template: auto / repeat(4, 1fr);
+  width: 100%;
+`;
 
 export const Value = styled.h1``;
 
-export const ValueBox = styled.div``;
+export const ValueBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+`;
 
-export const SwitcherLabel = styled.p``;
+export const SwitcherLabel = styled.p`
+  margin: 0 0 0 auto;
+`;
 
 export const Label = styled.h3``;
 
-export const TopBox = styled.div``;
+export const TopBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+`;
 
-export const CalculatorBox = styled.div``;
+export const CalculatorBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Calculator = ({ className }) => {
   return (
     <CalculatorBox className={className}>
       <TopBox>
         <Label>calc</Label>
+        <SwitcherLabel>Theme</SwitcherLabel>
         <ThemeSwitcher />
       </TopBox>
       <ValueBox>
