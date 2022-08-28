@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const CalcBtnLabel = styled.h2``;
+export const CalcBtnLabel = styled.h2`
+  margin: 0;
+`;
 
 export const CalcBtnBox = styled.div`
   grid-column: auto / span 1;
@@ -8,9 +10,19 @@ export const CalcBtnBox = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  user-select: none;
   background-color: ${(props) => props.theme.key.tertiary};
   color: ${(props) => props.theme.text.secondary};
-  border-bottom: 1rem solid ${(props) => props.theme.keyShadow.tertiary};
+  font-size: 1.5rem;
+  border-bottom: 0.25rem solid ${(props) => props.theme.keyShadow.tertiary};
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: 0.25s;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.5);
+  }
 `;
 
 const CalcBtn = ({ className, label }) => {
@@ -24,21 +36,23 @@ const CalcBtn = ({ className, label }) => {
 export const DeleteBtn = styled(CalcBtn).attrs({ label: "DEL" })`
   background-color: ${(props) => props.theme.key.primary};
   color: ${(props) => props.theme.text.quarternary};
-  border-bottom: 1rem solid ${(props) => props.theme.keyShadow.primary};
+  font-size: 1.1rem;
+  border-color: ${(props) => props.theme.keyShadow.primary};
 `;
 
 export const ResetBtn = styled(CalcBtn).attrs({ label: "RESET" })`
   grid-column: auto / span 2;
   background-color: ${(props) => props.theme.key.primary};
   color: ${(props) => props.theme.text.quarternary};
-  border-bottom: 1rem solid ${(props) => props.theme.keyShadow.primary};
+  font-size: 1.1rem;
+  border-color: ${(props) => props.theme.keyShadow.primary};
 `;
 
 export const EqualBtn = styled(CalcBtn).attrs({ label: "=" })`
   grid-column: auto / span 2;
   background-color: ${(props) => props.theme.key.secondary};
   color: ${(props) => props.theme.text.tertiary};
-  border-bottom: 1rem solid ${(props) => props.theme.keyShadow.secondary};
+  border-color: ${(props) => props.theme.keyShadow.secondary};
 `;
 
 export default CalcBtn;

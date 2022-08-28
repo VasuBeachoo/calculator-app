@@ -27,10 +27,10 @@ const GlobalStyle = styled.createGlobalStyle`
     --key-shadow-cyan-dark: hsl(185, 58%, 25%);
     --bg-key-orange-dark: hsl(25, 98%, 40%);
     --key-shadow-orange-dark: hsl(25, 99%, 27%);
-    --key-bg-gray-yellow: hsl(45, 7%, 89%);
+    --bg-key-gray-yellow: hsl(45, 7%, 89%);
     --key-shadow-gray-orange: hsl(35, 11%, 61%);
     --text-primary-2: hsl(60, 10%, 19%);
-    --text-secondary-2: hsl(0, 0%, 100%);
+    --text-secondary-2: hsl(60, 10%, 19%);
     --text-tertiary-2: hsl(0, 0%, 100%);
     --text-quarternary-2: hsl(0, 0%, 100%);
 

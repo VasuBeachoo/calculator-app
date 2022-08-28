@@ -52,8 +52,8 @@ const App = () => {
       text: {
         primary: "var(--text-primary-2)",
         secondary: "var(--text-secondary-2)",
-        tertiary: "var(--text-tertiary-1)",
-        quarternary: "var(--text-quarternary-1)",
+        tertiary: "var(--text-tertiary-2)",
+        quarternary: "var(--text-quarternary-2)",
       },
     },
     themeThree: {

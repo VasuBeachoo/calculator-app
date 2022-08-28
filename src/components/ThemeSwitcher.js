@@ -4,6 +4,7 @@ export const ToggleCircle = styled.div`
   width: 1rem;
   height: 1rem;
   background-color: ${(props) => props.theme.key.secondary};
+  border-radius: 100%;
 `;
 
 export const ClickBox = styled.div`
@@ -18,18 +19,29 @@ export const ToggleBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   background-color: ${(props) => props.theme.keypad};
+  border-radius: 2rem;
+  padding: 0.35rem;
+  transition: 0.25s;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.25);
+  }
 `;
 
 export const ThemeLabel = styled.p`
   color: ${(props) => props.theme.text.primary};
+  margin: 0;
 `;
 
 export const ThemesBox = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
 `;
 
 export const SwitcherBox = styled.div`
@@ -37,6 +49,9 @@ export const SwitcherBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.25rem;
+  width: 5rem;
+  user-select: none;
 `;
 
 const ThemeSwitcher = ({ className }) => {

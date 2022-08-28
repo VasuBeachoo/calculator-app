@@ -5,12 +5,18 @@ import CalcBtn, { DeleteBtn, ResetBtn, EqualBtn } from "./CalcBtn";
 export const BtnsBox = styled.div`
   display: grid;
   grid-template: auto / repeat(4, 1fr);
+  gap: 1.5rem;
   width: 100%;
   background-color: ${(props) => props.theme.keypad};
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  padding: 2rem;
 `;
 
 export const Value = styled.h1`
   color: ${(props) => props.theme.text.primary};
+  font-size: 2.5rem;
+  margin: 0;
 `;
 
 export const ValueBox = styled.div`
@@ -20,22 +26,31 @@ export const ValueBox = styled.div`
   align-items: center;
   width: 100%;
   background-color: ${(props) => props.theme.screen};
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  padding: 2rem;
 `;
 
 export const SwitcherLabel = styled.p`
+  transform: translateY(-0.3rem);
   color: ${(props) => props.theme.text.primary};
+  font-size: 0.85rem;
+  letter-spacing: 0.1ch;
   margin: 0 0 0 auto;
 `;
 
 export const Label = styled.h3`
   color: ${(props) => props.theme.text.primary};
+  font-size: 1.85rem;
+  margin: 0;
 `;
 
 export const TopBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
+  gap: 1rem;
   width: 100%;
 `;
 
@@ -44,6 +59,8 @@ export const CalculatorBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1.5rem;
+  width: clamp(10rem, 80vw, 35rem);
 `;
 
 const Calculator = ({ className }) => {
@@ -51,7 +68,7 @@ const Calculator = ({ className }) => {
     <CalculatorBox className={className}>
       <TopBox>
         <Label>calc</Label>
-        <SwitcherLabel>Theme</SwitcherLabel>
+        <SwitcherLabel>THEME</SwitcherLabel>
         <ThemeSwitcher />
       </TopBox>
       <ValueBox>
