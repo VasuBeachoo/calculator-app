@@ -6,9 +6,12 @@ export const BtnsBox = styled.div`
   display: grid;
   grid-template: auto / repeat(4, 1fr);
   width: 100%;
+  background-color: ${(props) => props.theme.keypad};
 `;
 
-export const Value = styled.h1``;
+export const Value = styled.h1`
+  color: ${(props) => props.theme.text.primary};
+`;
 
 export const ValueBox = styled.div`
   display: flex;
@@ -16,13 +19,17 @@ export const ValueBox = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: 100%;
+  background-color: ${(props) => props.theme.screen};
 `;
 
 export const SwitcherLabel = styled.p`
+  color: ${(props) => props.theme.text.primary};
   margin: 0 0 0 auto;
 `;
 
-export const Label = styled.h3``;
+export const Label = styled.h3`
+  color: ${(props) => props.theme.text.primary};
+`;
 
 export const TopBox = styled.div`
   display: flex;

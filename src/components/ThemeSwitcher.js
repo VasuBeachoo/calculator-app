@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const ToggleCircle = styled.div``;
+export const ToggleCircle = styled.div`
+  width: 1rem;
+  height: 1rem;
+  background-color: ${(props) => props.theme.key.secondary};
+`;
 
 export const ClickBox = styled.div`
   display: flex;
@@ -14,9 +18,12 @@ export const ToggleBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: ${(props) => props.theme.keypad};
 `;
 
-export const ThemeLabel = styled.p``;
+export const ThemeLabel = styled.p`
+  color: ${(props) => props.theme.text.primary};
+`;
 
 export const ThemesBox = styled.div`
   display: flex;

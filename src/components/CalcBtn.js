@@ -8,6 +8,9 @@ export const CalcBtnBox = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: ${(props) => props.theme.key.tertiary};
+  color: ${(props) => props.theme.text.secondary};
+  border-bottom: 1rem solid ${(props) => props.theme.keyShadow.tertiary};
 `;
 
 const CalcBtn = ({ className, label }) => {
@@ -18,14 +21,24 @@ const CalcBtn = ({ className, label }) => {
   );
 };
 
-export const DeleteBtn = styled(CalcBtn).attrs({ label: "DEL" })``;
+export const DeleteBtn = styled(CalcBtn).attrs({ label: "DEL" })`
+  background-color: ${(props) => props.theme.key.primary};
+  color: ${(props) => props.theme.text.quarternary};
+  border-bottom: 1rem solid ${(props) => props.theme.keyShadow.primary};
+`;
 
 export const ResetBtn = styled(CalcBtn).attrs({ label: "RESET" })`
   grid-column: auto / span 2;
+  background-color: ${(props) => props.theme.key.primary};
+  color: ${(props) => props.theme.text.quarternary};
+  border-bottom: 1rem solid ${(props) => props.theme.keyShadow.primary};
 `;
 
 export const EqualBtn = styled(CalcBtn).attrs({ label: "=" })`
   grid-column: auto / span 2;
+  background-color: ${(props) => props.theme.key.secondary};
+  color: ${(props) => props.theme.text.tertiary};
+  border-bottom: 1rem solid ${(props) => props.theme.keyShadow.secondary};
 `;
 
 export default CalcBtn;
