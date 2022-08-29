@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import Calculator from "./components/Calculator";
@@ -34,6 +35,7 @@ const App = () => {
         tertiary: "var(--text-tertiary-1)",
         quarternary: "var(--text-quarternary-1)",
       },
+      togglePosition: "left: 0.375rem;",
     },
     themeTwo: {
       main: "var(--bg-main-2)",
@@ -55,6 +57,7 @@ const App = () => {
         tertiary: "var(--text-tertiary-2)",
         quarternary: "var(--text-quarternary-2)",
       },
+      togglePosition: "left: 1.925rem;",
     },
     themeThree: {
       main: "var(--bg-main-3)",
@@ -76,11 +79,28 @@ const App = () => {
         tertiary: "var(--text-tertiary-3)",
         quarternary: "var(--text-quarternary-3)",
       },
+      togglePosition: "left: 3.675rem;",
     },
   };
 
+  const displayTheme = (themeNum) => {
+    switch (themeNum) {
+      case "1":
+        return theme.themeOne;
+      case "2":
+        return theme.themeTwo;
+      case "3":
+        return theme.themeThree;
+      default:
+        alert("");
+        return theme.themeOne;
+    }
+  };
+
+  let themeNum = useSelector((state) => state.calc.theme);
+
   return (
-    <ThemeProvider theme={theme.themeOne}>
+    <ThemeProvider theme={() => displayTheme(themeNum)}>
       <AppContainer>
         <GlobalStyle />
         <Calculator />

@@ -1,8 +1,14 @@
+import { useDispatch } from "react-redux";
+import { switchTheme } from "../calcSlice";
 import styled from "styled-components";
 
 export const ToggleCircle = styled.div`
+  position: absolute;
+  top: 0.275rem;
+  ${(props) => props.theme.togglePosition}
   width: 1rem;
   height: 1rem;
+  pointer-events: none;
   background-color: ${(props) => props.theme.key.secondary};
   border-radius: 100%;
 `;
@@ -12,16 +18,19 @@ export const ClickBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 33.333%;
 `;
 
 export const ToggleBox = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
+  height: 1.5rem;
   background-color: ${(props) => props.theme.keypad};
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 0.35rem;
   transition: 0.25s;
 
@@ -55,6 +64,8 @@ export const SwitcherBox = styled.div`
 `;
 
 const ThemeSwitcher = ({ className }) => {
+  const dispatch = useDispatch();
+
   return (
     <SwitcherBox className={className}>
       <ThemesBox>
@@ -64,9 +75,15 @@ const ThemeSwitcher = ({ className }) => {
       </ThemesBox>
       <ToggleBox>
         <ToggleCircle />
-        <ClickBox></ClickBox>
-        <ClickBox></ClickBox>
-        <ClickBox></ClickBox>
+        <ClickBox
+          onClick={() => dispatch(switchTheme({ theme: "1" }))}
+        ></ClickBox>
+        <ClickBox
+          onClick={() => dispatch(switchTheme({ theme: "2" }))}
+        ></ClickBox>
+        <ClickBox
+          onClick={() => dispatch(switchTheme({ theme: "3" }))}
+        ></ClickBox>
       </ToggleBox>
     </SwitcherBox>
   );

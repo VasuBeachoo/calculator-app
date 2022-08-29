@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CalcBtnLabel = styled.h2`
+  letter-spacing: 0.035ch;
   margin: 0;
 `;
 
