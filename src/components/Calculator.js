@@ -84,7 +84,7 @@ const Calculator = ({ className }) => {
         <CalcBtn label="7" onClick={() => dispatch(insertNum(7))} />
         <CalcBtn label="8" onClick={() => dispatch(insertNum(8))} />
         <CalcBtn label="9" onClick={() => dispatch(insertNum(9))} />
-        <DeleteBtn />
+        <DeleteBtn onClick={() => dispatch(removeNum())} />
         <CalcBtn label="4" onClick={() => dispatch(insertNum(4))} />
         <CalcBtn label="5" onClick={() => dispatch(insertNum(5))} />
         <CalcBtn label="6" onClick={() => dispatch(insertNum(6))} />

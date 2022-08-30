@@ -21,15 +21,13 @@ const calcSlice = createSlice({
           Math.round((state.value + addValue) * decimalValue) / decimalValue;
       }
     },
-    removeNum: (state, action) => {
+    removeNum: (state) => {
       if (!state.decimalMode) {
-        if (state.value !== 0 || action.payload !== 0) {
-          state.value *= 10;
-          state.value += action.payload;
-        }
+        state.value = Math.floor(state.value / 10);
       } else {
         state.decimalPlace--;
-        if (state.decimalPlace === 0) state.decimalMode = false;
+        const decimalValue = Math.pow(10, state.decimalPlace);
+        state.value = Math.round(state.value * decimalValue) / decimalValue;
       }
     },
     activateDecimalMode: (state) => {
@@ -43,7 +41,7 @@ const calcSlice = createSlice({
   },
 });
 
-export const { switchTheme, insertNum, activateDecimalMode, reset } =
+export const { switchTheme, insertNum, removeNum, activateDecimalMode, reset } =
   calcSlice.actions;
 
 export default calcSlice;

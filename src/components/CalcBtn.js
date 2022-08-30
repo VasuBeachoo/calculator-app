@@ -41,7 +41,7 @@ export const DeleteBtn = styled(CalcBtn).attrs({ label: "DEL" })`
   border-color: ${(props) => props.theme.keyShadow.primary};
 
   ${CalcBtnLabel} {
-    font-size: clamp(1rem, 8vw, 2.25rem);
+    font-size: clamp(1rem, 8vw, 2rem);
   }
 `;
 
@@ -53,7 +53,7 @@ export const ResetBtn = styled(CalcBtn).attrs({ label: "RESET" })`
   border-color: ${(props) => props.theme.keyShadow.primary};
 
   ${CalcBtnLabel} {
-    font-size: clamp(1rem, 8vw, 2.25rem);
+    font-size: clamp(1rem, 8vw, 2rem);
   }
 `;
 
