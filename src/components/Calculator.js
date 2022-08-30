@@ -24,7 +24,7 @@ export const BtnsBox = styled.div`
 
 export const Value = styled.h1`
   color: ${(props) => props.theme.text.primary};
-  font-size: 2.5rem;
+  font-size: clamp(0.5rem, 6vw, 2.5rem);
   margin: 0;
 `;
 
@@ -37,7 +37,7 @@ export const ValueBox = styled.div`
   background-color: ${(props) => props.theme.screen};
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  padding: 2rem;
+  padding: clamp(0.5rem, 6vw, 2rem);
 `;
 
 export const SwitcherLabel = styled.p`
