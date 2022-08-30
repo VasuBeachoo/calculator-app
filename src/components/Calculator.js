@@ -1,3 +1,5 @@
+import { useDispatch, useSelector } from "react-redux";
+import { insertNum, removeNum, activateDecimalMode, reset } from "../calcSlice";
 import styled from "styled-components";
 import ThemeSwitcher from "./ThemeSwitcher";
 import CalcBtn, { DeleteBtn, ResetBtn, EqualBtn } from "./CalcBtn";
@@ -5,12 +7,12 @@ import CalcBtn, { DeleteBtn, ResetBtn, EqualBtn } from "./CalcBtn";
 export const BtnsBox = styled.div`
   display: grid;
   grid-template: auto / repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: clamp(0.5rem, 4vw, 1.5rem);
   width: 100%;
   background-color: ${(props) => props.theme.keypad};
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  padding: 2rem;
+  padding: clamp(0.75rem, 4.5vw, 2rem);
 `;
 
 export const Value = styled.h1`
@@ -64,6 +66,10 @@ export const CalculatorBox = styled.div`
 `;
 
 const Calculator = ({ className }) => {
+  const dispatch = useDispatch();
+
+  const calcValue = useSelector((state) => state.calc.value);
+
   return (
     <CalculatorBox className={className}>
       <TopBox>
@@ -72,26 +78,26 @@ const Calculator = ({ className }) => {
         <ThemeSwitcher />
       </TopBox>
       <ValueBox>
-        <Value>399,981</Value>
+        <Value>{calcValue}</Value>
       </ValueBox>
       <BtnsBox>
-        <CalcBtn label="7" />
-        <CalcBtn label="8" />
-        <CalcBtn label="9" />
+        <CalcBtn label="7" onClick={() => dispatch(insertNum(7))} />
+        <CalcBtn label="8" onClick={() => dispatch(insertNum(8))} />
+        <CalcBtn label="9" onClick={() => dispatch(insertNum(9))} />
         <DeleteBtn />
-        <CalcBtn label="4" />
-        <CalcBtn label="5" />
-        <CalcBtn label="6" />
+        <CalcBtn label="4" onClick={() => dispatch(insertNum(4))} />
+        <CalcBtn label="5" onClick={() => dispatch(insertNum(5))} />
+        <CalcBtn label="6" onClick={() => dispatch(insertNum(6))} />
         <CalcBtn label="+" />
-        <CalcBtn label="1" />
-        <CalcBtn label="2" />
-        <CalcBtn label="3" />
+        <CalcBtn label="1" onClick={() => dispatch(insertNum(1))} />
+        <CalcBtn label="2" onClick={() => dispatch(insertNum(2))} />
+        <CalcBtn label="3" onClick={() => dispatch(insertNum(3))} />
         <CalcBtn label="-" />
-        <CalcBtn label="." />
-        <CalcBtn label="0" />
+        <CalcBtn label="." onClick={() => dispatch(activateDecimalMode())} />
+        <CalcBtn label="0" onClick={() => dispatch(insertNum(0))} />
         <CalcBtn label="/" />
         <CalcBtn label="x" />
-        <ResetBtn />
+        <ResetBtn onClick={() => dispatch(reset())} />
         <EqualBtn />
       </BtnsBox>
     </CalculatorBox>

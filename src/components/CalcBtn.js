@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CalcBtnLabel = styled.h2`
+  font-size: clamp(1rem, 10vw, 2.5rem);
   letter-spacing: 0.035ch;
   margin: 0;
 `;
@@ -17,7 +18,7 @@ export const CalcBtnBox = styled.div`
   font-size: 1.5rem;
   border-bottom: 0.25rem solid ${(props) => props.theme.keyShadow.tertiary};
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: clamp(0.5rem, 3vw, 1rem);
   transition: 0.25s;
 
   &:hover {
@@ -26,9 +27,9 @@ export const CalcBtnBox = styled.div`
   }
 `;
 
-const CalcBtn = ({ className, label }) => {
+const CalcBtn = ({ className, label, onClick }) => {
   return (
-    <CalcBtnBox className={className}>
+    <CalcBtnBox className={className} onClick={onClick}>
       <CalcBtnLabel>{label}</CalcBtnLabel>
     </CalcBtnBox>
   );
@@ -37,8 +38,11 @@ const CalcBtn = ({ className, label }) => {
 export const DeleteBtn = styled(CalcBtn).attrs({ label: "DEL" })`
   background-color: ${(props) => props.theme.key.primary};
   color: ${(props) => props.theme.text.quarternary};
-  font-size: 1.1rem;
   border-color: ${(props) => props.theme.keyShadow.primary};
+
+  ${CalcBtnLabel} {
+    font-size: clamp(1rem, 8vw, 2.25rem);
+  }
 `;
 
 export const ResetBtn = styled(CalcBtn).attrs({ label: "RESET" })`
@@ -47,6 +51,10 @@ export const ResetBtn = styled(CalcBtn).attrs({ label: "RESET" })`
   color: ${(props) => props.theme.text.quarternary};
   font-size: 1.1rem;
   border-color: ${(props) => props.theme.keyShadow.primary};
+
+  ${CalcBtnLabel} {
+    font-size: clamp(1rem, 8vw, 2.25rem);
+  }
 `;
 
 export const EqualBtn = styled(CalcBtn).attrs({ label: "=" })`
