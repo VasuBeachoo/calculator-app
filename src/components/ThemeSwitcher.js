@@ -75,15 +75,9 @@ const ThemeSwitcher = ({ className }) => {
       </ThemesBox>
       <ToggleBox>
         <ToggleCircle />
-        <ClickBox
-          onClick={() => dispatch(switchTheme({ theme: "1" }))}
-        ></ClickBox>
-        <ClickBox
-          onClick={() => dispatch(switchTheme({ theme: "2" }))}
-        ></ClickBox>
-        <ClickBox
-          onClick={() => dispatch(switchTheme({ theme: "3" }))}
-        ></ClickBox>
+        <ClickBox onClick={() => dispatch(switchTheme("1"))}></ClickBox>
+        <ClickBox onClick={() => dispatch(switchTheme("2"))}></ClickBox>
+        <ClickBox onClick={() => dispatch(switchTheme("3"))}></ClickBox>
       </ToggleBox>
     </SwitcherBox>
   );
