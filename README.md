@@ -23,7 +23,9 @@ Users should be able to:
 ### Screenshot
 
 ![](./public/screenshot-1.png)
+
 ![](./public/screenshot-2.png)
+
 ![](./public/screenshot-3.png)
 
 ### Links
